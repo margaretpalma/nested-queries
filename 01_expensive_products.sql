@@ -1,8 +1,13 @@
+select
+products.productID,
+product.productname,
+product.unitprice,
+categories.categoryname
 
-select productname
 from products
-where unitprice = (
-select max(unitprice)
-from products);
+join categories 
+on product.categoryID = categories.categoryid
 
+order by categories.categoryname,
+products.productname;
 
